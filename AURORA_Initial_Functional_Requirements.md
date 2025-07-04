@@ -5,8 +5,8 @@ The AURORA Intelligence Platform is a secure, modular solution designed to empow
 
 ## Key Components and Capabilities
 ### 1. Multi-Source Data Integration (Data Explorer)
-* **Unified Search**: Connects to both system-provided and user-uploaded datasets, supporting a wide range of formats (CSV, Excel, JSON, XML, Parquet, TXT).
-* **Advanced Querying**: Offers an Elasticsearch-like interface for flexible, full-text, and field-specific searches across all sources.
+* **Unified Search**: Connects to both system-provided (system data provided under 'data_repository' folder) and user-uploaded datasets (sample user uploaded data are in 'user_uploads' folder), supporting a wide range of formats (CSV, Excel, JSON, XML, Parquet, TXT).
+* **Advanced Querying**: Offers an AI-Powered Intelligence Search as well as an Elasticsearch-like interface for flexible, full-text, and field-specific searches across all sources. AI-Powered Intelligence Search should use natural language to search across all intelligence databases (both AURORA system provided data and user uploaded data) with advanced cross-platform correlation.  An example of a search query for AI-Powered Intelligence could be like this: 'Software engineers in Toronto with connections to Hungary who have suspicious financial activity'.
 * **Data Upload & Storage**: Users can upload data for session-based (cache) or persistent (on-site) analysis, with organization-wide sharing options and secure storage policies.
 * **Web Scraping**: Enables integration of public data sources via user-provided URLs, with notifications upon successful ingestion.
 * **Actionable Results**: Each search result includes direct links to build cases, analyze relationships, or geolocate entities.
@@ -83,7 +83,7 @@ The Login Module is the primary access point for the AURORA Intelligence Platfor
 #### User Levels and Hierarchy
 AURORA defines three distinct user roles, each with specific permissions and dashboard access:
 1.  **AURORA Admin**
-    * **Credentials**: Initially uses a hardcoded username and password for development purposes (to be replaced for security).
+    * **Credentials**: Initially created by the system and uses a hardcoded username and password for development purposes (to be replaced for security).
     * **Access**: Full control over all platform features and data.
     * **Permissions**:
         * Create, edit, and delete organizations.
@@ -101,7 +101,7 @@ AURORA defines three distinct user roles, each with specific permissions and das
 3.  **Regular Users**
     * **Creation**: Created by an Organization Administrator.
     * **Association**: Linked to a specific organization.
-    * **Permissions**: No access to user management; limited to operational modules.
+    * **Permissions**: No access to user management; limited to operational modules. However user must be able to change his/her password. 
     * **Dashboard**: Access only to general modules (e.g., Data Explorer, Relations).
 
 #### Dashboards and Administrative Features
@@ -291,6 +291,33 @@ For the AURORA prototype, the Entity Resolution and Relationship Mapping module 
         * Expand/collapse nodes.
         * Filter by relationship type or confidence.
         * Search for specific entities.
+* **De-cluttering & Initial View:**
+    * **Default View:** Show only selected entity and its 1st-degree connections. Allow toggling for 2nd/3rd-degree connections.
+    * **Dynamic Aggregation:** Automatically group less relevant, highly connected nodes (e.g., common phone numbers) into clickable "super-nodes" to reduce visual noise.
+    * **Layout:** Utilize force-directed layouts (e.g., d3-force) to group related nodes visually.
+* **Intuitive Node & Edge Representation:**
+    * **Node Types:** Clearly distinguish entity types (Person, Organization, Phone, Email, Address, Vehicle, Financial Account) using distinct colors (as per existing AURORA documentation) and/or iconography (e.g., Phosphor Icons).
+    * **Node Sizing:** Dynamically size nodes based on metrics like centrality or risk score, with clear visual legends.
+    * **Edge Types & Direction:** Represent relationship types ("Lives At," "Works At," "Contacts," "Transacted With," "Associated With") and indicate direction (where applicable, e.g., money flow) using different line styles, colors, or arrows.
+    * **Confidence Scores:** Visually encode relationship confidence scores (e.g., line thickness, opacity, or a small numerical overlay) on the edges.
+    * **Customizable Labels:** Users **MUST** be able to toggle the visibility of node/edge labels (e.g., full name, alias, primary phone number) to control information density.
+* **Interactive Exploration:**
+    * **Standard Navigation:** Standard intuitive navigation (mouse wheel zoom, click-and-drag pan, drag-and-drop nodes to rearrange layout) **MUST** be supported for seamless exploration.
+    * **Node Expansion/Collapse:** Clicking on a node **MUST** expand its hidden connections (if any are aggregated) or open a detailed information panel/pop-over. Conversely, users **MUST** be able to collapse expanded nodes.
+    * **Dynamic Filtering:** Provide interactive filters to dynamically show/hide nodes or edges based on:
+        * Entity Type (e.g., show only Persons and Organizations).
+        * Relationship Type (e.g., show only "Transacted With" relationships).
+        * Relationship Confidence Score (e.g., show only links above 0.7 confidence).
+        * Temporal Range (using a time-slider to visualize network evolution, e.g., "Show connections active between 2020-2022").
+        * Risk Level (e.g., show only entities with "High" or "Critical" risk scores).
+    * **Pathfinding/Traversal:** Allow users to select two nodes and find the shortest or most relevant path(s) between them, highlighting the path on the graph.
+    * **Selection & Grouping:** Users **MUST** be able to select multiple nodes/edges (e.g., rectangle select, CTRL+click) for group actions (e.g., "Add to Case," "Run Analytics on Selection").
+* **Detailed Information Panels (Click-to-Reveal):**
+    * Clicking any node or edge **MUST** open a non-blocking, contextual information panel (e.g., a sidebar or modal) displaying all relevant attributes, source data, confidence scores, and a brief summary of the entity/relationship.
+    * This panel **SHOULD** include direct links to the underlying raw data records.
+* **Output & Export:**
+    * Users **MUST** be able to export the current graph view as high-resolution images (PNG, SVG) and structured data formats (e.g., JSON representing the displayed graph, GML).
+    * The system **SHOULD** allow "saving" a specific graph view to a case file for future reference.
 
 #### 4. Analyst Feedback & Continuous Improvement
 * **Feedback Mechanism**
