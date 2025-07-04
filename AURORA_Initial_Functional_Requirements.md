@@ -163,6 +163,8 @@ This review establishes a clear, secure, and scalable foundation for user authen
     * Web Scraping of Public Databases:
         * Users can request scraping of public data by providing a URL.
         * System notifies users upon successful ingestion and availability of new data sources.
+    * Sample user data provided in 'user_uploads' folder:
+        * For testing the integration of user uploaded data into AURORA, we have provided some sample data sets that could be used for testing 
 
 ##### 3. Data Quality & Integrity Validation
 * **Mechanisms to Prevent Erroneous or Malicious Data**:
@@ -740,6 +742,8 @@ These requirements ensure the Case Management module provides a secure, collabor
 * **User Data Upload**:
     * Users specify columns for tokenization; results are returned in cache or stored on the server as per user preference[cite: 293, 294].
     * Batch processing with progress indicators and error reporting.
+    * Sample user data provided in 'user_uploads' folder:
+        * For testing the integration of user uploaded data into AURORA, we have provided some sample data sets that could be used for testing 
 * **Copy & Paste String**:
     * Dedicated input window for ad hoc tokenization and geolocation.
     * Immediate display of parsed fields, confidence scores, and map visualization.
