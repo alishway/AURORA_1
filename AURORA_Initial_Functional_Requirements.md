@@ -740,7 +740,7 @@ These requirements ensure the Case Management module provides a secure, collabor
 
 ##### 10. Usage Scenarios and User Experience
 * **User Data Upload**:
-    * Users specify columns for tokenization; results are returned in cache or stored on the server as per user preference[cite: 293, 294].
+    * Users specify columns for tokenization; results are returned in cache or stored on the server as per user preference.
     * Batch processing with progress indicators and error reporting.
     * Sample user data provided in 'user_uploads' folder:
         * For testing the integration of user uploaded data into AURORA, we have provided some sample data sets that could be used for testing 
