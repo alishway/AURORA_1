@@ -1,0 +1,413 @@
+[
+  {
+    "record_id": "TRAVEL_2024_001",
+    "crossing_type": "BORDER_CROSSING",
+    "timestamp": "2024-01-15T09:45:00Z",
+    "border_point": "Rainbow Bridge - Niagara Falls",
+    "direction": "CANADA_TO_USA",
+    "document_type": "PASSPORT",
+    "document_number": "CA12345678",
+    "entity": {
+      "name": "Marcus Chen",
+      "type": "INDIVIDUAL",
+      "id": "INDV_001"
+    },
+    "vehicle_info": {
+      "license_plate": "ABCD123",
+      "make": "Honda",
+      "model": "Civic",
+      "color": "Silver",
+      "year": 2020
+    },
+    "location_from": "Toronto, ON, Canada",
+    "location_to": "Buffalo, NY, USA",
+    "purpose_of_travel": "Business",
+    "duration_of_stay": "3 days",
+    "risk_indicators": ["FREQUENT_CROSSINGS", "UNUSUAL_CASH_AMOUNTS"],
+    "cash_declared": 8500.00,
+    "currency": "USD",
+    "biometric_data": {
+      "facial_recognition_match": true,
+      "fingerprint_match": true,
+      "confidence_score": 0.96
+    },
+    "companion_travelers": [],
+    "border_officer": "Officer Johnson",
+    "secondary_inspection": false,
+    "related_records": ["COMM_2024_001", "TXN_2024_001234"]
+  },
+  {
+    "record_id": "TRAVEL_2024_002",
+    "crossing_type": "AIRPORT_DEPARTURE",
+    "timestamp": "2024-01-18T16:30:00Z",
+    "airport_code": "YYZ",
+    "airport_name": "Toronto Pearson International Airport",
+    "flight_number": "LH441",
+    "airline": "Lufthansa",
+    "destination": "FRA - Frankfurt, Germany",
+    "document_type": "PASSPORT",
+    "document_number": "HU9876543",
+    "entity": {
+      "name": "János Kovács",
+      "type": "INDIVIDUAL",
+      "id": "INDV_003"
+    },
+    "seat_assignment": "12A",
+    "booking_reference": "ABC123",
+    "ticket_purchase_date": "2024-01-10T14:20:00Z",
+    "payment_method": "CASH",
+    "risk_indicators": ["LAST_MINUTE_BOOKING", "CASH_PAYMENT", "ONE_WAY_TICKET"],
+    "baggage_info": {
+      "checked_bags": 2,
+      "carry_on": 1,
+      "special_items": ["Laptop", "Business Documents"],
+      "total_weight_kg": 35.5
+    },
+    "travel_history": {
+      "previous_destinations": ["Budapest", "Vienna", "Dubai"],
+      "frequency_score": 7.8,
+      "unusual_patterns": ["Increased frequency in past 6 months"]
+    },
+    "watchlist_alerts": ["FINANCIAL_CRIMES_WATCHLIST"],
+    "customs_declaration": {
+      "goods_to_declare": false,
+      "cash_amount": 12000.00,
+      "currency": "EUR"
+    },
+    "related_records": ["COMM_2024_001", "TXN_2024_001237"]
+  },
+  {
+    "record_id": "TRAVEL_2024_003",
+    "crossing_type": "MARITIME_ARRIVAL",
+    "timestamp": "2024-01-24T18:00:00Z",
+    "port_name": "Halifax Port",
+    "port_code": "CALHX",
+    "vessel_name": "Northern Star",
+    "vessel_imo": "IMO9123456",
+    "vessel_flag": "Panama",
+    "cargo_manifest": "General Cargo",
+    "crew_manifest": [
+      {
+        "name": "Captain Rodriguez",
+        "nationality": "Mexican",
+        "passport": "MX1234567",
+        "role": "Captain"
+      },
+      {
+        "name": "Officer Petrov",
+        "nationality": "Russian",
+        "passport": "RU7654321",
+        "role": "First Officer"
+      }
+    ],
+    "port_of_origin": "Puerto de Veracruz, Mexico",
+    "last_port_of_call": "Miami, FL, USA",
+    "risk_indicators": ["HIGH_RISK_ORIGIN", "UNUSUAL_CARGO_ROUTE", "CREW_NATIONALITY_MIX"],
+    "customs_inspection": {
+      "inspection_type": "FULL_SEARCH",
+      "inspector": "Inspector Williams",
+      "findings": ["Discrepancy in cargo manifest", "Undeclared compartments"],
+      "contraband_found": false,
+      "additional_screening": true
+    },
+    "cargo_details": [
+      {
+        "container_id": "MSKU7890123",
+        "contents": "Electronics",
+        "weight_kg": 15000,
+        "destination": "Montreal, QC",
+        "consignee": "Global Import Export Ltd."
+      },
+      {
+        "container_id": "TCLU4567890",
+        "contents": "Textiles",
+        "weight_kg": 8500,
+        "destination": "Toronto, ON",
+        "consignee": "Fashion Forward Inc."
+      }
+    ],
+    "related_records": ["COMM_2024_009", "TXN_2024_001235"]
+  },
+  {
+    "record_id": "TRAVEL_2024_004",
+    "crossing_type": "LAND_BORDER",
+    "timestamp": "2024-01-20T22:30:00Z",
+    "border_point": "Douglas Border Crossing",
+    "direction": "USA_TO_CANADA",
+    "document_type": "ENHANCED_DRIVERS_LICENSE",
+    "document_number": "WA123456789",
+    "entity": {
+      "name": "Sarah Johnson",
+      "type": "INDIVIDUAL",
+      "id": "INDV_004"
+    },
+    "vehicle_info": {
+      "license_plate": "WA-789XYZ",
+      "make": "Toyota",
+      "model": "Camry",
+      "color": "Black",
+      "year": 2019
+    },
+    "location_from": "Seattle, WA, USA",
+    "location_to": "Vancouver, BC, Canada",
+    "purpose_of_travel": "Visiting Friends",
+    "duration_of_stay": "Weekend",
+    "risk_indicators": ["LATE_NIGHT_CROSSING", "FREQUENT_SHORT_TRIPS"],
+    "search_conducted": true,
+    "search_results": {
+      "contraband_found": false,
+      "cash_found": 15000.00,
+      "currency": "CAD",
+      "unusual_items": ["Large amounts of prepaid cards"],
+      "officer_notes": "Nervous behavior, inconsistent story"
+    },
+    "companion_travelers": [],
+    "border_officer": "Officer Smith",
+    "secondary_inspection": true,
+    "detention_time_minutes": 45,
+    "related_records": ["COMM_2024_002", "TXN_2024_001238"]
+  },
+  {
+    "record_id": "TRAVEL_2024_005",
+    "crossing_type": "AIRPORT_ARRIVAL",
+    "timestamp": "2024-01-22T14:15:00Z",
+    "airport_code": "YWG",
+    "airport_name": "Winnipeg Richardson International Airport",
+    "flight_number": "AM687",
+    "airline": "Aeromexico",
+    "origin": "MEX - Mexico City, Mexico",
+    "document_type": "PASSPORT",
+    "document_number": "MX9876543",
+    "entity": {
+      "name": "Carlos Mendoza",
+      "type": "INDIVIDUAL",
+      "id": "INDV_007"
+    },
+    "visa_type": "VISITOR",
+    "visa_number": "V123456789",
+    "seat_assignment": "15C",
+    "booking_reference": "XYZ789",
+    "ticket_purchase_date": "2024-01-15T10:30:00Z",
+    "payment_method": "CASH",
+    "risk_indicators": ["HIGH_RISK_ORIGIN", "CASH_PAYMENT", "UNUSUAL_DESTINATION"],
+    "baggage_info": {
+      "checked_bags": 1,
+      "carry_on": 1,
+      "special_items": [],
+      "total_weight_kg": 23.0
+    },
+    "immigration_interview": {
+      "officer": "Immigration Officer Brown",
+      "duration_minutes": 30,
+      "purpose_of_visit": "Business Meeting",
+      "accommodation": "Hotel Fort Garry",
+      "contact_person": "Michael Rodriguez",
+      "contact_phone": "+1-204-555-7788",
+      "funds_available": 5000.00,
+      "return_ticket": false
+    },
+    "watchlist_alerts": ["DRUG_TRAFFICKING_WATCHLIST"],
+    "customs_declaration": {
+      "goods_to_declare": false,
+      "cash_amount": 4500.00,
+      "currency": "USD"
+    },
+    "related_records": ["COMM_2024_003", "TXN_2024_001242"]
+  },
+  {
+    "record_id": "TRAVEL_2024_006",
+    "crossing_type": "PRIVATE_AIRCRAFT",
+    "timestamp": "2024-01-25T11:00:00Z",
+    "airport_code": "YKZ",
+    "airport_name": "Buttonville Municipal Airport",
+    "aircraft_registration": "C-GXYZ",
+    "aircraft_type": "Cessna Citation",
+    "pilot_name": "Captain Williams",
+    "pilot_license": "ATPL-001234",
+    "flight_plan": {
+      "origin": "Teterboro Airport, NJ, USA",
+      "destination": "Buttonville Municipal Airport, ON, Canada",
+      "flight_time_hours": 2.5,
+      "fuel_stops": 0
+    },
+    "passengers": [
+      {
+        "name": "Anna Petrov",
+        "passport": "RU5432109",
+        "nationality": "Russian",
+        "entity_id": "INDV_006"
+      }
+    ],
+    "purpose_of_travel": "Business Meeting",
+    "risk_indicators": ["PRIVATE_AIRCRAFT", "UNUSUAL_ROUTE", "HIGH_NET_WORTH"],
+    "customs_processing": {
+      "officer": "Customs Officer Davis",
+      "inspection_type": "ROUTINE",
+      "declaration_amount": 25000.00,
+      "currency": "USD",
+      "goods_declared": ["Luxury watches", "Jewelry"],
+      "duty_paid": 3200.00
+    },
+    "immigration_status": "VISITOR",
+    "duration_of_stay": "5 days",
+    "accommodation": "Four Seasons Hotel Toronto",
+    "sponsor_contact": "Law Firm Partnership",
+    "related_records": ["COMM_2024_006", "TXN_2024_001243"]
+  },
+  {
+    "record_id": "TRAVEL_2024_007",
+    "crossing_type": "TRAIN_INTERNATIONAL",
+    "timestamp": "2024-01-19T08:30:00Z",
+    "train_service": "Amtrak Adirondack",
+    "train_number": "68",
+    "origin_station": "Montreal Central Station",
+    "destination_station": "New York Penn Station",
+    "document_type": "PASSPORT",
+    "document_number": "CA87654321",
+    "entity": {
+      "name": "David Kim",
+      "type": "INDIVIDUAL",
+      "id": "INDV_008"
+    },
+    "seat_assignment": "Coach Car B, Seat 23",
+    "ticket_purchase_date": "2024-01-18T20:00:00Z",
+    "payment_method": "CREDIT_CARD",
+    "risk_indicators": ["LAST_MINUTE_BOOKING", "UNUSUAL_TRAVEL_METHOD"],
+    "border_crossing_point": "Lacolle, QC / Champlain, NY",
+    "inspection_details": {
+      "officer": "Border Agent Thompson",
+      "inspection_type": "DOCUMENT_CHECK",
+      "additional_questions": true,
+      "delay_minutes": 15,
+      "notes": "Passenger appeared nervous, provided vague travel plans"
+    },
+    "travel_companions": [],
+    "luggage_details": {
+      "carry_on_bags": 2,
+      "unusual_items": ["Large amount of electronics"],
+      "total_weight_estimate": "Heavy"
+    },
+    "related_records": ["COMM_2024_004"]
+  },
+  {
+    "record_id": "TRAVEL_2024_008",
+    "crossing_type": "REMOTE_BORDER",
+    "timestamp": "2024-01-21T03:15:00Z",
+    "border_point": "Unmonitored Forest Trail",
+    "detection_method": "MOTION_SENSOR",
+    "location_coordinates": {
+      "latitude": 49.0001,
+      "longitude": -95.1234
+    },
+    "direction": "USA_TO_CANADA",
+    "entity": {
+      "name": "Unknown Individual",
+      "type": "UNKNOWN",
+      "id": "UNK_002"
+    },
+    "detection_details": {
+      "sensor_type": "INFRARED_CAMERA",
+      "image_quality": "POOR",
+      "weather_conditions": "Heavy Snow",
+      "visibility": "Limited"
+    },
+    "risk_indicators": ["ILLEGAL_CROSSING", "REMOTE_LOCATION", "NIGHT_TIME"],
+    "response_actions": {
+      "alert_sent": true,
+      "patrol_dispatched": true,
+      "response_time_minutes": 45,
+      "apprehension_successful": false
+    },
+    "evidence_found": {
+      "footprints": true,
+      "dropped_items": ["Backpack", "Food wrappers"],
+      "tracking_possible": true
+    },
+    "investigation_status": "ACTIVE",
+    "related_records": []
+  },
+  {
+    "record_id": "TRAVEL_2024_009",
+    "crossing_type": "DIPLOMATIC_ENTRY",
+    "timestamp": "2024-01-23T10:00:00Z",
+    "airport_code": "YOW",
+    "airport_name": "Ottawa Macdonald-Cartier International Airport",
+    "flight_number": "AC125",
+    "airline": "Air Canada",
+    "origin": "LHR - London Heathrow, UK",
+    "document_type": "DIPLOMATIC_PASSPORT",
+    "document_number": "UK-DIP-001234",
+    "entity": {
+      "name": "Ambassador Harrison",
+      "type": "DIPLOMAT",
+      "id": "DIPL_001"
+    },
+    "diplomatic_status": "AMBASSADOR",
+    "embassy": "British High Commission",
+    "security_clearance": "DIPLOMATIC_IMMUNITY",
+    "risk_indicators": ["DIPLOMATIC_IMMUNITY", "UNUSUAL_CARGO"],
+    "baggage_info": {
+      "diplomatic_pouches": 3,
+      "personal_luggage": 2,
+      "special_handling": true,
+      "inspection_waived": true
+    },
+    "escort_details": {
+      "diplomatic_security": true,
+      "local_liaison": "RCMP Inspector Wilson",
+      "transport_arranged": true
+    },
+    "related_records": []
+  },
+  {
+    "record_id": "TRAVEL_2024_010",
+    "crossing_type": "REFUGEE_CLAIM",
+    "timestamp": "2024-01-26T16:45:00Z",
+    "border_point": "Emerson Border Crossing",
+    "direction": "USA_TO_CANADA",
+    "document_type": "NO_DOCUMENTS",
+    "document_number": null,
+    "entity": {
+      "name": "Asylum Seeker Family",
+      "type": "GROUP",
+      "id": "ASYLUM_001"
+    },
+    "family_members": [
+      {
+        "name": "Fatima Al-Hassan",
+        "age": 35,
+        "relationship": "Mother",
+        "country_of_origin": "Syria"
+      },
+      {
+        "name": "Omar Al-Hassan",
+        "age": 12,
+        "relationship": "Son",
+        "country_of_origin": "Syria"
+      },
+      {
+        "name": "Layla Al-Hassan",
+        "age": 8,
+        "relationship": "Daughter",
+        "country_of_origin": "Syria"
+      }
+    ],
+    "country_of_origin": "Syria",
+    "asylum_claim": true,
+    "risk_indicators": ["UNDOCUMENTED", "ASYLUM_CLAIM", "FAMILY_UNIT"],
+    "processing_details": {
+      "officer": "Immigration Officer Garcia",
+      "interview_duration_hours": 3,
+      "translator_required": true,
+      "language": "Arabic",
+      "medical_screening": true,
+      "temporary_accommodation": "Reception Center"
+    },
+    "background_checks": {
+      "interpol_check": "CLEAR",
+      "security_screening": "PENDING",
+      "biometric_collection": true
+    },
+    "related_records": []
+  }
+] 
