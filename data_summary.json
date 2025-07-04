@@ -1,0 +1,72 @@
+{
+  "generation_timestamp": "2025-06-22T12:52:43.195375",
+  "total_records": 12000,
+  "datasets": [
+    {
+      "name": "Facebook Data",
+      "filename": "facebook_data.json",
+      "record_count": 1000
+    },
+    {
+      "name": "Twitter Data",
+      "filename": "twitter_data.json",
+      "record_count": 1000
+    },
+    {
+      "name": "WhatsApp Data",
+      "filename": "whatsapp_data.json",
+      "record_count": 1000
+    },
+    {
+      "name": "LinkedIn Data",
+      "filename": "linkedin_data.json",
+      "record_count": 1000
+    },
+    {
+      "name": "Instagram Data",
+      "filename": "instagram_data.json",
+      "record_count": 1000
+    },
+    {
+      "name": "Telegram Data",
+      "filename": "telegram_data.json",
+      "record_count": 1000
+    },
+    {
+      "name": "Weather Data",
+      "filename": "weather_data.json",
+      "record_count": 1000
+    },
+    {
+      "name": "Social Vulnerability Data",
+      "filename": "social_vulnerability_data.json",
+      "record_count": 1000
+    },
+    {
+      "name": "Business Directory",
+      "filename": "business_directory_data.json",
+      "record_count": 1000
+    },
+    {
+      "name": "Residential Address Data",
+      "filename": "residential_address_data.json",
+      "record_count": 1000
+    },
+    {
+      "name": "Interpol Database",
+      "filename": "interpol_data.json",
+      "record_count": 1000
+    },
+    {
+      "name": "Additional Intelligence",
+      "filename": "additional_intelligence_data.json",
+      "record_count": 1000
+    }
+  ],
+  "data_characteristics": {
+    "geographic_focus": "Canada (80%) and USA (20%)",
+    "time_range": "2019-2024",
+    "synthetic_data": true,
+    "intelligence_ready": true
+  }
+}

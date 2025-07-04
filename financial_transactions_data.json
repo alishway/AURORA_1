@@ -1,0 +1,262 @@
+[
+  {
+    "transaction_id": "TXN_2024_001234",
+    "transaction_date": "2024-01-15T14:30:00Z",
+    "transaction_type": "CASH_DEPOSIT",
+    "amount": 9800.00,
+    "currency": "USD",
+    "from_account": "CASH",
+    "to_account": "987654321",
+    "from_entity": {
+      "name": "Marcus Chen",
+      "type": "INDIVIDUAL",
+      "id": "INDV_001"
+    },
+    "to_entity": {
+      "name": "TechFlow Solutions Inc.",
+      "type": "BUSINESS",
+      "id": "BUS_001"
+    },
+    "bank_name": "Royal Bank of Canada",
+    "branch_code": "RBC_001",
+    "location": "Toronto, ON",
+    "description": "Business Deposit",
+    "flags": ["STRUCTURED_AMOUNT", "FREQUENT_CASH"],
+    "risk_score": 85,
+    "related_transactions": ["TXN_2024_001235", "TXN_2024_001236"]
+  },
+  {
+    "transaction_id": "TXN_2024_001235",
+    "transaction_date": "2024-01-16T10:15:00Z",
+    "transaction_type": "WIRE_TRANSFER",
+    "amount": 25000.00,
+    "currency": "USD",
+    "from_account": "987654321",
+    "to_account": "123456789",
+    "from_entity": {
+      "name": "TechFlow Solutions Inc.",
+      "type": "BUSINESS",
+      "id": "BUS_001"
+    },
+    "to_entity": {
+      "name": "Global Import Export Ltd.",
+      "type": "BUSINESS",
+      "id": "BUS_002"
+    },
+    "bank_name": "TD Bank",
+    "branch_code": "TD_002",
+    "location": "Vancouver, BC",
+    "description": "Business Payment",
+    "flags": ["RAPID_TRANSFER", "SHELL_COMPANY"],
+    "risk_score": 78,
+    "related_transactions": ["TXN_2024_001234", "TXN_2024_001237"]
+  },
+  {
+    "transaction_id": "TXN_2024_001236",
+    "transaction_date": "2024-01-17T16:45:00Z",
+    "transaction_type": "CASH_DEPOSIT",
+    "amount": 9750.00,
+    "currency": "USD",
+    "from_account": "CASH",
+    "to_account": "987654321",
+    "from_entity": {
+      "name": "Chen Wei",
+      "type": "INDIVIDUAL",
+      "id": "INDV_002"
+    },
+    "to_entity": {
+      "name": "TechFlow Solutions Inc.",
+      "type": "BUSINESS",
+      "id": "BUS_001"
+    },
+    "bank_name": "Royal Bank of Canada",
+    "branch_code": "RBC_001",
+    "location": "Toronto, ON",
+    "description": "Business Deposit",
+    "flags": ["STRUCTURED_AMOUNT", "FAMILY_MEMBER"],
+    "risk_score": 82,
+    "related_transactions": ["TXN_2024_001234", "TXN_2024_001238"]
+  },
+  {
+    "transaction_id": "TXN_2024_001237",
+    "transaction_date": "2024-01-18T11:20:00Z",
+    "transaction_type": "INTERNATIONAL_WIRE",
+    "amount": 50000.00,
+    "currency": "EUR",
+    "from_account": "123456789",
+    "to_account": "HUNG_9876543",
+    "from_entity": {
+      "name": "Global Import Export Ltd.",
+      "type": "BUSINESS",
+      "id": "BUS_002"
+    },
+    "to_entity": {
+      "name": "János Kovács",
+      "type": "INDIVIDUAL",
+      "id": "INDV_003"
+    },
+    "bank_name": "OTP Bank",
+    "branch_code": "OTP_HUN_001",
+    "location": "Budapest, Hungary",
+    "description": "Consulting Services",
+    "flags": ["INTERNATIONAL", "HIGH_RISK_INDIVIDUAL"],
+    "risk_score": 95,
+    "related_transactions": ["TXN_2024_001235", "TXN_2024_001239"]
+  },
+  {
+    "transaction_id": "TXN_2024_001238",
+    "transaction_date": "2024-01-19T09:30:00Z",
+    "transaction_type": "CASH_WITHDRAWAL",
+    "amount": 8000.00,
+    "currency": "USD",
+    "from_account": "456789123",
+    "to_account": "CASH",
+    "from_entity": {
+      "name": "Sarah Johnson",
+      "type": "INDIVIDUAL",
+      "id": "INDV_004"
+    },
+    "to_entity": {
+      "name": "CASH",
+      "type": "CASH",
+      "id": "CASH_001"
+    },
+    "bank_name": "Scotia Bank",
+    "branch_code": "SCO_003",
+    "location": "Montreal, QC",
+    "description": "Cash Withdrawal",
+    "flags": ["LARGE_CASH", "UNUSUAL_PATTERN"],
+    "risk_score": 65,
+    "related_transactions": ["TXN_2024_001240"]
+  },
+  {
+    "transaction_id": "TXN_2024_001239",
+    "transaction_date": "2024-01-20T13:45:00Z",
+    "transaction_type": "CRYPTOCURRENCY",
+    "amount": 15000.00,
+    "currency": "BTC",
+    "from_account": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
+    "to_account": "bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq",
+    "from_entity": {
+      "name": "János Kovács",
+      "type": "INDIVIDUAL",
+      "id": "INDV_003"
+    },
+    "to_entity": {
+      "name": "Unknown Wallet",
+      "type": "CRYPTO_WALLET",
+      "id": "CRYPTO_001"
+    },
+    "bank_name": "Crypto Exchange",
+    "branch_code": "BINANCE_001",
+    "location": "Online",
+    "description": "Cryptocurrency Transfer",
+    "flags": ["CRYPTOCURRENCY", "OBFUSCATION"],
+    "risk_score": 88,
+    "related_transactions": ["TXN_2024_001237"]
+  },
+  {
+    "transaction_id": "TXN_2024_001240",
+    "transaction_date": "2024-01-21T15:10:00Z",
+    "transaction_type": "REAL_ESTATE",
+    "amount": 750000.00,
+    "currency": "CAD",
+    "from_account": "CASH",
+    "to_account": "PROPERTY_PURCHASE",
+    "from_entity": {
+      "name": "Numbered Company 1234567 Alberta Ltd.",
+      "type": "SHELL_COMPANY",
+      "id": "SHELL_001"
+    },
+    "to_entity": {
+      "name": "Downtown Property Holdings",
+      "type": "REAL_ESTATE",
+      "id": "PROP_001"
+    },
+    "bank_name": "Lawyer Trust Account",
+    "branch_code": "LAW_001",
+    "location": "Calgary, AB",
+    "description": "Property Purchase - 123 Main St",
+    "flags": ["CASH_PURCHASE", "SHELL_COMPANY", "HIGH_VALUE"],
+    "risk_score": 92,
+    "related_transactions": []
+  },
+  {
+    "transaction_id": "TXN_2024_001241",
+    "transaction_date": "2024-01-22T12:00:00Z",
+    "transaction_type": "CASH_DEPOSIT",
+    "amount": 9900.00,
+    "currency": "USD",
+    "from_account": "CASH",
+    "to_account": "789123456",
+    "from_entity": {
+      "name": "Michael Rodriguez",
+      "type": "INDIVIDUAL",
+      "id": "INDV_005"
+    },
+    "to_entity": {
+      "name": "Elite Auto Sales",
+      "type": "BUSINESS",
+      "id": "BUS_003"
+    },
+    "bank_name": "BMO Bank",
+    "branch_code": "BMO_004",
+    "location": "Winnipeg, MB",
+    "description": "Vehicle Purchase Deposit",
+    "flags": ["STRUCTURED_AMOUNT", "CASH_BUSINESS"],
+    "risk_score": 75,
+    "related_transactions": ["TXN_2024_001242"]
+  },
+  {
+    "transaction_id": "TXN_2024_001242",
+    "transaction_date": "2024-01-23T14:30:00Z",
+    "transaction_type": "WIRE_TRANSFER",
+    "amount": 35000.00,
+    "currency": "USD",
+    "from_account": "789123456",
+    "to_account": "MEX_987654321",
+    "from_entity": {
+      "name": "Elite Auto Sales",
+      "type": "BUSINESS",
+      "id": "BUS_003"
+    },
+    "to_entity": {
+      "name": "Transportes del Norte S.A.",
+      "type": "BUSINESS",
+      "id": "BUS_004"
+    },
+    "bank_name": "Banco Nacional de México",
+    "branch_code": "BANAMEX_001",
+    "location": "Tijuana, Mexico",
+    "description": "Equipment Purchase",
+    "flags": ["CROSS_BORDER", "HIGH_RISK_REGION"],
+    "risk_score": 86,
+    "related_transactions": ["TXN_2024_001241"]
+  },
+  {
+    "transaction_id": "TXN_2024_001243",
+    "transaction_date": "2024-01-24T10:15:00Z",
+    "transaction_type": "ATM_WITHDRAWAL",
+    "amount": 1000.00,
+    "currency": "USD",
+    "from_account": "321654987",
+    "to_account": "CASH",
+    "from_entity": {
+      "name": "Anna Petrov",
+      "type": "INDIVIDUAL",
+      "id": "INDV_006"
+    },
+    "to_entity": {
+      "name": "CASH",
+      "type": "CASH",
+      "id": "CASH_002"
+    },
+    "bank_name": "RBC ATM",
+    "branch_code": "ATM_001",
+    "location": "Toronto, ON",
+    "description": "ATM Withdrawal",
+    "flags": ["FREQUENT_WITHDRAWALS"],
+    "risk_score": 35,
+    "related_transactions": []
+  }
+] 

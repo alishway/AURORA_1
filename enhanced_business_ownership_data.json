@@ -1,0 +1,647 @@
+[
+  {
+    "record_id": "BUS_ENT_2024_001",
+    "business_name": "TechFlow Solutions Inc.",
+    "registration_number": "ON-123456789",
+    "business_type": "CORPORATION",
+    "incorporation_date": "2019-03-15",
+    "jurisdiction": "Ontario, Canada",
+    "status": "ACTIVE",
+    "registered_address": "99 Apple Street North, Toronto, ON M5V 2J8",
+    "mailing_address": "99 Apple Street North, Toronto, ON M5V 2J8",
+    "business_activities": ["Technology Consulting", "Software Development", "Import/Export"],
+    "naics_code": "541511",
+    "entity_id": "BUS_001",
+    "risk_score": 75,
+    "risk_indicators": ["CASH_INTENSIVE", "MINIMAL_EMPLOYEES", "RAPID_FINANCIAL_GROWTH"],
+    "ownership_structure": {
+      "beneficial_owners": [
+        {
+          "name": "Marcus Chen",
+          "entity_id": "INDV_001",
+          "ownership_percentage": 60.0,
+          "ownership_type": "DIRECT",
+          "position": "CEO/President",
+          "control_type": "VOTING_CONTROL"
+        },
+        {
+          "name": "Chen Wei",
+          "entity_id": "INDV_002",
+          "ownership_percentage": 25.0,
+          "ownership_type": "DIRECT",
+          "position": "Vice President",
+          "control_type": "MINORITY_INTEREST"
+        },
+        {
+          "name": "Numbered Company 7890123 Ontario Ltd.",
+          "entity_id": "SHELL_002",
+          "ownership_percentage": 15.0,
+          "ownership_type": "CORPORATE",
+          "position": "Shareholder",
+          "control_type": "PASSIVE_INVESTMENT"
+        }
+      ],
+      "directors": [
+        {
+          "name": "Marcus Chen",
+          "entity_id": "INDV_001",
+          "position": "Director",
+          "appointment_date": "2019-03-15"
+        },
+        {
+          "name": "Sarah Johnson",
+          "entity_id": "INDV_004",
+          "position": "Independent Director",
+          "appointment_date": "2020-01-10"
+        }
+      ],
+      "officers": [
+        {
+          "name": "Marcus Chen",
+          "entity_id": "INDV_001",
+          "position": "CEO",
+          "appointment_date": "2019-03-15"
+        },
+        {
+          "name": "Chen Wei",
+          "entity_id": "INDV_002",
+          "position": "CFO",
+          "appointment_date": "2019-03-15"
+        }
+      ]
+    },
+    "financial_information": {
+      "annual_revenue": 2500000.00,
+      "employee_count": 12,
+      "bank_accounts": [
+        {
+          "account_number": "987654321",
+          "bank_name": "Royal Bank of Canada",
+          "account_type": "BUSINESS_CHECKING"
+        },
+        {
+          "account_number": "555444333",
+          "bank_name": "TD Bank",
+          "account_type": "BUSINESS_SAVINGS"
+        }
+      ],
+      "credit_rating": "B+",
+      "tax_compliance": "CURRENT"
+    },
+    "related_entities": [
+      {
+        "entity_id": "INDV_001",
+        "relationship": "OWNER",
+        "strength": 0.95
+      },
+      {
+        "entity_id": "INDV_002",
+        "relationship": "FAMILY_MEMBER",
+        "strength": 0.85
+      },
+      {
+        "entity_id": "BUS_002",
+        "relationship": "BUSINESS_PARTNER",
+        "strength": 0.70
+      }
+    ],
+    "compliance_records": {
+      "aml_compliance": "REVIEWED",
+      "sanctions_screening": "CLEAR",
+      "pep_screening": "CLEAR",
+      "last_updated": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "record_id": "BUS_ENT_2024_002",
+    "business_name": "Global Import Export Ltd.",
+    "registration_number": "BC-987654321",
+    "business_type": "CORPORATION",
+    "incorporation_date": "2018-11-20",
+    "jurisdiction": "British Columbia, Canada",
+    "status": "ACTIVE",
+    "registered_address": "1200 West Georgia Street, Vancouver, BC V6E 2Y3",
+    "mailing_address": "PO Box 5678, Vancouver, BC V6B 1A1",
+    "business_activities": ["International Trade", "Logistics", "Consulting"],
+    "naics_code": "425110",
+    "entity_id": "BUS_002",
+    "risk_score": 92,
+    "risk_indicators": ["SHELL_COMPANY", "MINIMAL_OPERATIONS", "COMPLEX_OWNERSHIP", "HIGH_RISK_JURISDICTIONS"],
+    "ownership_structure": {
+      "beneficial_owners": [
+        {
+          "name": "János Kovács",
+          "entity_id": "INDV_003",
+          "ownership_percentage": 35.0,
+          "ownership_type": "INDIRECT",
+          "position": "Beneficial Owner",
+          "control_type": "SIGNIFICANT_CONTROL"
+        },
+        {
+          "name": "Cayman Islands Holding Company",
+          "entity_id": "OFFSHORE_001",
+          "ownership_percentage": 40.0,
+          "ownership_type": "CORPORATE",
+          "position": "Parent Company",
+          "control_type": "CONTROLLING_INTEREST"
+        },
+        {
+          "name": "BVI Trust Services Ltd.",
+          "entity_id": "OFFSHORE_002",
+          "ownership_percentage": 25.0,
+          "ownership_type": "TRUST",
+          "position": "Trustee",
+          "control_type": "TRUST_CONTROL"
+        }
+      ],
+      "directors": [
+        {
+          "name": "Nominee Director Services Inc.",
+          "entity_id": "NOMINEE_001",
+          "position": "Director",
+          "appointment_date": "2018-11-20"
+        }
+      ],
+      "officers": [
+        {
+          "name": "Corporate Secretary Services",
+          "entity_id": "NOMINEE_002",
+          "position": "Secretary",
+          "appointment_date": "2018-11-20"
+        }
+      ]
+    },
+    "financial_information": {
+      "annual_revenue": 15000000.00,
+      "employee_count": 3,
+      "bank_accounts": [
+        {
+          "account_number": "123456789",
+          "bank_name": "TD Bank",
+          "account_type": "BUSINESS_CHECKING"
+        },
+        {
+          "account_number": "CAYMAN_001",
+          "bank_name": "Cayman National Bank",
+          "account_type": "OFFSHORE_ACCOUNT"
+        }
+      ],
+      "credit_rating": "NR",
+      "tax_compliance": "UNDER_REVIEW"
+    },
+    "related_entities": [
+      {
+        "entity_id": "INDV_003",
+        "relationship": "BENEFICIAL_OWNER",
+        "strength": 0.88
+      },
+      {
+        "entity_id": "BUS_001",
+        "relationship": "BUSINESS_PARTNER",
+        "strength": 0.70
+      },
+      {
+        "entity_id": "OFFSHORE_001",
+        "relationship": "PARENT_COMPANY",
+        "strength": 0.95
+      }
+    ],
+    "compliance_records": {
+      "aml_compliance": "FLAGGED",
+      "sanctions_screening": "UNDER_REVIEW",
+      "pep_screening": "FLAGGED",
+      "last_updated": "2024-01-18T14:30:00Z"
+    }
+  },
+  {
+    "record_id": "BUS_ENT_2024_003",
+    "business_name": "Elite Auto Sales",
+    "registration_number": "MB-555666777",
+    "business_type": "CORPORATION",
+    "incorporation_date": "2020-07-10",
+    "jurisdiction": "Manitoba, Canada",
+    "status": "ACTIVE",
+    "registered_address": "1500 Portage Avenue, Winnipeg, MB R3G 0W4",
+    "mailing_address": "1500 Portage Avenue, Winnipeg, MB R3G 0W4",
+    "business_activities": ["Automotive Sales", "Vehicle Financing", "Export"],
+    "naics_code": "441110",
+    "entity_id": "BUS_003",
+    "risk_score": 68,
+    "risk_indicators": ["CASH_INTENSIVE", "EXPORT_BUSINESS", "USED_VEHICLE_SALES"],
+    "ownership_structure": {
+      "beneficial_owners": [
+        {
+          "name": "Michael Rodriguez",
+          "entity_id": "INDV_005",
+          "ownership_percentage": 75.0,
+          "ownership_type": "DIRECT",
+          "position": "Owner/Manager",
+          "control_type": "MAJORITY_CONTROL"
+        },
+        {
+          "name": "Rodriguez Family Trust",
+          "entity_id": "TRUST_001",
+          "ownership_percentage": 25.0,
+          "ownership_type": "TRUST",
+          "position": "Beneficiary",
+          "control_type": "TRUST_BENEFICIARY"
+        }
+      ],
+      "directors": [
+        {
+          "name": "Michael Rodriguez",
+          "entity_id": "INDV_005",
+          "position": "Director",
+          "appointment_date": "2020-07-10"
+        },
+        {
+          "name": "Maria Rodriguez",
+          "entity_id": "INDV_010",
+          "position": "Director",
+          "appointment_date": "2020-07-10"
+        }
+      ],
+      "officers": [
+        {
+          "name": "Michael Rodriguez",
+          "entity_id": "INDV_005",
+          "position": "President",
+          "appointment_date": "2020-07-10"
+        }
+      ]
+    },
+    "financial_information": {
+      "annual_revenue": 8500000.00,
+      "employee_count": 25,
+      "bank_accounts": [
+        {
+          "account_number": "789123456",
+          "bank_name": "BMO Bank",
+          "account_type": "BUSINESS_CHECKING"
+        }
+      ],
+      "credit_rating": "B",
+      "tax_compliance": "CURRENT"
+    },
+    "related_entities": [
+      {
+        "entity_id": "INDV_005",
+        "relationship": "OWNER",
+        "strength": 0.92
+      },
+      {
+        "entity_id": "INDV_007",
+        "relationship": "BUSINESS_CONTACT",
+        "strength": 0.45
+      },
+      {
+        "entity_id": "BUS_004",
+        "relationship": "SUPPLIER",
+        "strength": 0.65
+      }
+    ],
+    "compliance_records": {
+      "aml_compliance": "REVIEWED",
+      "sanctions_screening": "CLEAR",
+      "pep_screening": "CLEAR",
+      "last_updated": "2024-01-22T09:00:00Z"
+    }
+  },
+  {
+    "record_id": "BUS_ENT_2024_004",
+    "business_name": "Numbered Company 1234567 Alberta Ltd.",
+    "registration_number": "AB-1234567",
+    "business_type": "CORPORATION",
+    "incorporation_date": "2021-01-05",
+    "jurisdiction": "Alberta, Canada",
+    "status": "ACTIVE",
+    "registered_address": "1234 Corporate Drive, Calgary, AB T2P 1J5",
+    "mailing_address": "c/o Legal Services, 5678 Law Street, Calgary, AB T2P 2K9",
+    "business_activities": ["Real Estate Investment", "Property Management"],
+    "naics_code": "531311",
+    "entity_id": "SHELL_001",
+    "risk_score": 95,
+    "risk_indicators": ["NUMBERED_COMPANY", "NOMINEE_SERVICES", "PROPERTY_INVESTMENT", "MINIMAL_ACTIVITY"],
+    "ownership_structure": {
+      "beneficial_owners": [
+        {
+          "name": "CONFIDENTIAL - Under Legal Protection",
+          "entity_id": "CONFIDENTIAL_001",
+          "ownership_percentage": 100.0,
+          "ownership_type": "CONFIDENTIAL",
+          "position": "Beneficial Owner",
+          "control_type": "FULL_CONTROL"
+        }
+      ],
+      "directors": [
+        {
+          "name": "Professional Director Services Ltd.",
+          "entity_id": "NOMINEE_003",
+          "position": "Director",
+          "appointment_date": "2021-01-05"
+        }
+      ],
+      "officers": [
+        {
+          "name": "Corporate Services Group",
+          "entity_id": "NOMINEE_004",
+          "position": "Secretary",
+          "appointment_date": "2021-01-05"
+        }
+      ]
+    },
+    "financial_information": {
+      "annual_revenue": 50000.00,
+      "employee_count": 0,
+      "bank_accounts": [
+        {
+          "account_number": "CONFIDENTIAL",
+          "bank_name": "Private Banking Services",
+          "account_type": "TRUST_ACCOUNT"
+        }
+      ],
+      "credit_rating": "NR",
+      "tax_compliance": "MINIMAL_FILING"
+    },
+    "related_entities": [
+      {
+        "entity_id": "PROP_001",
+        "relationship": "PROPERTY_OWNER",
+        "strength": 0.95
+      },
+      {
+        "entity_id": "NOMINEE_003",
+        "relationship": "NOMINEE_DIRECTOR",
+        "strength": 0.85
+      }
+    ],
+    "compliance_records": {
+      "aml_compliance": "REQUIRES_REVIEW",
+      "sanctions_screening": "PENDING",
+      "pep_screening": "UNKNOWN",
+      "last_updated": "2024-01-21T16:00:00Z"
+    }
+  },
+  {
+    "record_id": "BUS_ENT_2024_005",
+    "business_name": "Transportes del Norte S.A.",
+    "registration_number": "MX-987654321",
+    "business_type": "SOCIEDAD_ANONIMA",
+    "incorporation_date": "2017-05-12",
+    "jurisdiction": "Baja California, Mexico",
+    "status": "ACTIVE",
+    "registered_address": "Avenida Revolución 1234, Tijuana, BC, Mexico",
+    "mailing_address": "Avenida Revolución 1234, Tijuana, BC, Mexico",
+    "business_activities": ["Transportation", "Logistics", "Cross-Border Trade"],
+    "naics_code": "484110",
+    "entity_id": "BUS_004",
+    "risk_score": 88,
+    "risk_indicators": ["HIGH_RISK_REGION", "CROSS_BORDER_OPERATIONS", "TRANSPORTATION_INDUSTRY"],
+    "ownership_structure": {
+      "beneficial_owners": [
+        {
+          "name": "Carlos Mendoza",
+          "entity_id": "INDV_007",
+          "ownership_percentage": 45.0,
+          "ownership_type": "DIRECT",
+          "position": "Managing Director",
+          "control_type": "SIGNIFICANT_CONTROL"
+        },
+        {
+          "name": "Mendoza Family Holdings",
+          "entity_id": "FAMILY_001",
+          "ownership_percentage": 30.0,
+          "ownership_type": "FAMILY_TRUST",
+          "position": "Family Trust",
+          "control_type": "TRUST_CONTROL"
+        },
+        {
+          "name": "Unknown Beneficial Owner",
+          "entity_id": "UNKNOWN_001",
+          "ownership_percentage": 25.0,
+          "ownership_type": "UNKNOWN",
+          "position": "Silent Partner",
+          "control_type": "UNKNOWN"
+        }
+      ],
+      "directors": [
+        {
+          "name": "Carlos Mendoza",
+          "entity_id": "INDV_007",
+          "position": "Director General",
+          "appointment_date": "2017-05-12"
+        }
+      ],
+      "officers": [
+        {
+          "name": "Carlos Mendoza",
+          "entity_id": "INDV_007",
+          "position": "CEO",
+          "appointment_date": "2017-05-12"
+        }
+      ]
+    },
+    "financial_information": {
+      "annual_revenue": 12000000.00,
+      "employee_count": 85,
+      "bank_accounts": [
+        {
+          "account_number": "MEX_987654321",
+          "bank_name": "Banco Nacional de México",
+          "account_type": "COMMERCIAL_ACCOUNT"
+        }
+      ],
+      "credit_rating": "B-",
+      "tax_compliance": "CURRENT"
+    },
+    "related_entities": [
+      {
+        "entity_id": "INDV_007",
+        "relationship": "OWNER",
+        "strength": 0.90
+      },
+      {
+        "entity_id": "INDV_005",
+        "relationship": "BUSINESS_PARTNER",
+        "strength": 0.55
+      },
+      {
+        "entity_id": "BUS_003",
+        "relationship": "CLIENT",
+        "strength": 0.65
+      }
+    ],
+    "compliance_records": {
+      "aml_compliance": "UNDER_REVIEW",
+      "sanctions_screening": "FLAGGED",
+      "pep_screening": "UNDER_REVIEW",
+      "last_updated": "2024-01-23T11:30:00Z"
+    }
+  },
+  {
+    "record_id": "BUS_ENT_2024_006",
+    "business_name": "Petrov Consulting Services Ltd.",
+    "registration_number": "ON-789123456",
+    "business_type": "CORPORATION",
+    "incorporation_date": "2022-03-01",
+    "jurisdiction": "Ontario, Canada",
+    "status": "ACTIVE",
+    "registered_address": "200 Bay Street, Toronto, ON M5J 2J2",
+    "mailing_address": "200 Bay Street, Toronto, ON M5J 2J2",
+    "business_activities": ["Business Consulting", "Financial Advisory", "International Business"],
+    "naics_code": "541611",
+    "entity_id": "BUS_005",
+    "risk_score": 72,
+    "risk_indicators": ["FOREIGN_NATIONAL_OWNER", "CONSULTING_SERVICES", "INTERNATIONAL_CLIENTS"],
+    "ownership_structure": {
+      "beneficial_owners": [
+        {
+          "name": "Anna Petrov",
+          "entity_id": "INDV_006",
+          "ownership_percentage": 85.0,
+          "ownership_type": "DIRECT",
+          "position": "Owner/Consultant",
+          "control_type": "MAJORITY_CONTROL"
+        },
+        {
+          "name": "Petrov Holdings (Cyprus) Ltd.",
+          "entity_id": "OFFSHORE_003",
+          "ownership_percentage": 15.0,
+          "ownership_type": "CORPORATE",
+          "position": "Investment Company",
+          "control_type": "MINORITY_INTEREST"
+        }
+      ],
+      "directors": [
+        {
+          "name": "Anna Petrov",
+          "entity_id": "INDV_006",
+          "position": "Director",
+          "appointment_date": "2022-03-01"
+        }
+      ],
+      "officers": [
+        {
+          "name": "Anna Petrov",
+          "entity_id": "INDV_006",
+          "position": "President",
+          "appointment_date": "2022-03-01"
+        }
+      ]
+    },
+    "financial_information": {
+      "annual_revenue": 850000.00,
+      "employee_count": 3,
+      "bank_accounts": [
+        {
+          "account_number": "321654987",
+          "bank_name": "RBC Bank",
+          "account_type": "BUSINESS_CHECKING"
+        }
+      ],
+      "credit_rating": "B+",
+      "tax_compliance": "CURRENT"
+    },
+    "related_entities": [
+      {
+        "entity_id": "INDV_006",
+        "relationship": "OWNER",
+        "strength": 0.95
+      },
+      {
+        "entity_id": "OFFSHORE_003",
+        "relationship": "PARENT_COMPANY",
+        "strength": 0.65
+      }
+    ],
+    "compliance_records": {
+      "aml_compliance": "REVIEWED",
+      "sanctions_screening": "CLEAR",
+      "pep_screening": "CLEAR",
+      "last_updated": "2024-01-25T12:00:00Z"
+    }
+  },
+  {
+    "record_id": "BUS_ENT_2024_007",
+    "business_name": "Kim Tech Solutions Inc.",
+    "registration_number": "QC-456789123",
+    "business_type": "CORPORATION",
+    "incorporation_date": "2019-09-15",
+    "jurisdiction": "Quebec, Canada",
+    "status": "ACTIVE",
+    "registered_address": "1000 René-Lévesque Boulevard, Montreal, QC H3B 4W5",
+    "mailing_address": "1000 René-Lévesque Boulevard, Montreal, QC H3B 4W5",
+    "business_activities": ["Software Development", "IT Services", "Electronics Trading"],
+    "naics_code": "541510",
+    "entity_id": "BUS_006",
+    "risk_score": 58,
+    "risk_indicators": ["ELECTRONICS_TRADE", "INTERNATIONAL_TRANSACTIONS"],
+    "ownership_structure": {
+      "beneficial_owners": [
+        {
+          "name": "David Kim",
+          "entity_id": "INDV_008",
+          "ownership_percentage": 90.0,
+          "ownership_type": "DIRECT",
+          "position": "Owner/CEO",
+          "control_type": "MAJORITY_CONTROL"
+        },
+        {
+          "name": "Kim Family Trust",
+          "entity_id": "TRUST_002",
+          "ownership_percentage": 10.0,
+          "ownership_type": "TRUST",
+          "position": "Family Trust",
+          "control_type": "TRUST_BENEFICIARY"
+        }
+      ],
+      "directors": [
+        {
+          "name": "David Kim",
+          "entity_id": "INDV_008",
+          "position": "Director",
+          "appointment_date": "2019-09-15"
+        }
+      ],
+      "officers": [
+        {
+          "name": "David Kim",
+          "entity_id": "INDV_008",
+          "position": "CEO",
+          "appointment_date": "2019-09-15"
+        }
+      ]
+    },
+    "financial_information": {
+      "annual_revenue": 3200000.00,
+      "employee_count": 18,
+      "bank_accounts": [
+        {
+          "account_number": "654321098",
+          "bank_name": "Desjardins",
+          "account_type": "BUSINESS_CHECKING"
+        }
+      ],
+      "credit_rating": "A-",
+      "tax_compliance": "CURRENT"
+    },
+    "related_entities": [
+      {
+        "entity_id": "INDV_008",
+        "relationship": "OWNER",
+        "strength": 0.95
+      },
+      {
+        "entity_id": "TRUST_002",
+        "relationship": "TRUST_BENEFICIARY",
+        "strength": 0.80
+      }
+    ],
+    "compliance_records": {
+      "aml_compliance": "REVIEWED",
+      "sanctions_screening": "CLEAR",
+      "pep_screening": "CLEAR",
+      "last_updated": "2024-01-24T08:30:00Z"
+    }
+  }
+] 
