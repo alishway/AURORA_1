@@ -1,129 +1,172 @@
-Here’s a comprehensive analysis and expert feedback on your requirements and workflow for the 'Case Builder/Creator' feature of the AURORA Intelligence Platform, comparing it to leading-edge solutions like Palantir Gotham, Babel Street, IBM i2, and other cutting-edge law enforcement tools.
+Certainly! Below is a **comprehensive, up-to-date requirements specification for the AURORA Intelligence Platform’s Case Builder/Creator Feature**, reflecting all your latest technical implementation details (RBAC, data classification, storage modes, audit, enforcement boundaries, etc.) and lessons from industry leaders. This is formatted for direct export to a `.md` (Markdown) file—**clear sections, actionable feature lists, bullet points, and embedded law enforcement best practices, all aligned to your current codebase**.
 
-## Industry Benchmark: Core Case Builder Features
+# AURORA Intelligence Platform  
+## Case Builder/Creator Feature: Industry-Benchmark Functional Specification
 
-### Data Integration and Exploration
+## 1. Data Integration and Exploration
 
-- **Industry Standard:** Seamless integration of disparate data sources (internal records, open-source intelligence, breached data, uploaded user files)[1][2][3][4].
-- **Best Practice:** Unified search with dynamic filtering and immediate “add to case” options; Entity Resolution and Network Analysis for relation mapping[1][2][3][4].
-- **Your Design:** “Data Explorer” and “Relations” capture these standards well, but should enable instant actions (create/edit case, annotate, flag, link) directly from search results for both system and uploaded data.
+### Functional Summary
 
-**Questions:**
-- What data types/formats are most commonly uploaded, and how do you plan to reconcile field mappings between internal and external sources?
-- Are there any restrictions for which records can or cannot be used to create a case (i.e., user permissions, data sensitivity)?
+- **Upload & Integration:**
+  - Officers can upload tabular (CSV, XLSX), unstructured (PDF, DOCX, EML), and media (image, audio, video) data.
+  - All uploads require explicit setting of:
+    - **`data_classification`** (`unclassified`, `confidential`, `secret`, `top_secret`)
+    - **`storage_mode`** (`analysis_sandbox`, `case_evidence`, `intelligence_vault`, `collaborative_workspace`)
 
-### Case Initiation and Naming
+- **Role-Based Access & Enforcement:**
+  - **Aurora Admin**: Unrestricted access (across all orgs, Top Secret data)
+  - **Organization Admin**: Restricted to own org, up to Secret classification
+  - **Regular User**: Restricted to own org/resources, up to Confidential
+  - **Strict RLS (Row Level Security)** on all data queries and uploads: User only accesses/downloads/upload records for which they are explicitly cleared.
 
-- **Industry Standard:** Automated case naming, with manual override. AI-powered summarization of case names/descriptions from linked records[2][5].
-- **Your Design:** Default AI-extracted naming with rename option is good—ensure that the “seed” for the AI extractor is customizable per entity type (person, incident, organization, etc.).
+- **Dynamic UI/UX:**
+  - All actions (view/search/upload/“add to case”) are dynamically enabled/disabled based on user role, classification, storage mode, and org boundary.
+  - Classification and storage mode badges displayed for every record; UI prevents actions on records above user’s clearance.
 
-**Questions:**
-- Should users be able to add multiple records simultaneously to a new/existing case from search results?
-- Would you like to suggest AI summaries or recommendations (such as related cases, past templates, relevant collaborators) at creation?
+- **Exploratory Search:**
+  - Unified queries across system-uploaded and user-uploaded data, but results filtered/enforced by RBAC, classification, and storage mode (database → API → UI).
 
-### Collaboration & Access Control
+- **Ingestion & Mapping:**
+  - User-friendly field mapping for structured uploads.
+  - Named Entity Recognition (NER) to extract structured entities from unstructured data; user must possess requisite clearance for extracted items.
 
-- **Industry Standard:** Fine-grained access—private, organizational, task-based, or even multi-agency (with customizable permissions: view, edit, comment, share)[6][7][2][3].
-- **Your Design:** “Private/shared” toggle is a start, but best practice is role- and attribute-based access, supporting audit trail of every action[2][7].
-- **Key Feature:** Internal messaging, assignment of tasks/sub-cases, and a collaborative notes workspace with threaded comments[6][4][7].
+- **Storage Modes:**
+  - `analysis_sandbox`: Personal, ephemeral (24h max)
+  - `case_evidence`: Restricted to assigned case team members
+  - `intelligence_vault`: Organization-wide sharing, scoped by classification and role
+  - `collaborative_workspace`: Multi-agency/federated future mode
 
-**Questions:**
-- What collaboration features are most important: Real-time co-editing, notifications, messaging, case-specific discussions, or external sharing?
-- Will you need granular audit logs for legal compliance (who viewed/added/edited/exported which component at what time[2][7])?
+## 2. Case Initiation and Naming
 
-### Investigative Tools Integration
+### Functional Summary
 
-- **Industry Standard:** Deep linking from case notes to search queries, “Relations” diagrams, and geospatial/network snapshots. Visual, persistent linkage between entities and investigations[1][2][4].
-- **Your Design:** Linking saved queries and relation-module outputs with live previews is strong. Option to update linked visualizations as data changes is recommended (version history too).
+- **Bulk Add from Search/Visualization:**
+  - Multi-select (checkbox, Ctrl+click, or drag-select) from search results or network diagrams.
+  - “Add to Existing Case” or “Create New Case with Selection” actions are only available for records within user’s clearance and purpose.
 
-**Questions:**
-- Should past relation/network analyses stored in a case be auto-updated if new data is added to the platform?
-- Will you need structured tagging (e.g. “Who-Is-Who”/“Who-Knows-Who”) with metadata to enable search/filtering across thousands of case notes?
+- **AI-Supported Naming and Summaries:**
+  - On new-case initiation, AI-driven suggestions for name and description—seeded by selected records/entities, customizable logic by entity type.
+  - All suggestions are editable and tracked.
 
-### Notes, Reporting, and Export
+- **Record Linking & Context:**
+  - Every record retains:
+    - Source module and file
+    - Data classification and storage mode
+    - Originating org
+    - Full provenance
 
-- **Industry Standard:** Structured notes (sectioned, rich-text, multimedia, attachments), templated and custom report generation with audit history[2][5][4][8]. Option to export the whole case, or selected sections, to PDF/Word (with customizable cover, headers, footers, watermarks).
-- **Your Design:** Proposed workflow aligns well, but ensure inline attachment support, and sync between notes and audit trail.
+- **Case Creation Constraints:**
+  - Enforcement of role/classification: User cannot include records beyond clearance/storage_mode (attempt = alert + audit).
+  - Only case members (assigned via backend policy) gain access to case_evidence-linked records.
 
-**Questions:**
-- Do you want officers to be able to annotate diagrams, tag notes, or embed external media (audio/video)?
-- Should reports be standardized for court use, or fully customizable?
+- **Metadata & Audit:**
+  - Every initiation, addition, edit, and sharing is fully logged, including attempted or denied actions.
 
-### Security and Audit
+- **AI-Powered Suggestions:**
+  - Related case matches, officer/collaborator recommendations, and relevant report/case templates—restricted to user’s clearance.
 
-- **Industry Standard:** Role-based access, persistent audit trail on every action, configurable data retention and export policies[2][9][7]. Automated alerts for unauthorized access attempts.
-- **Your Design:** Ensure all collaborative actions (even read-only access or note reading) are logged and time-stamped.
+## 3. Collaboration & Access Control
 
-**Questions:**
-- Do you require support for case “locking,” supervisor approvals, or time-based access expiry?
-- Is multi-org/federated case management (for task forces/coalitions) needed, or will cases only reside inside a single agency for now?
+### Functional Summary
 
-## Recommended Next Steps & Guidance
+- **RBAC and Classification Enforcement:**
+  - **Three-tier roles** enforce not just record access, but also case collaboration features (edit, comment, assign, export).
+  - **Real-time UI filtering and disabling** for features above user’s permitted scope.
 
-### Workflow and Information Flow Suggestions
+- **Discussion, Messaging, and Co-Editing:**
+  - Threaded comments, mentions, and message threads scoped by case assignment and data access (e.g., can’t see comments attached to data you aren’t cleared for).
+  - Real-time collaborative editing for case notes/reports (within cleared content).
+  - All communication, edits, and assignments are audit logged.
 
-1. **Unified Search & Case Seeding**
-   - Search/query across all integrated data—including user uploads
-   - “Create/Link to Case” available per-result and via bulk-action
-   - Prompt for case naming, AI suggestion, collaboration options
+- **Case Team Controls & Storage Mode Boundaries:**
+  - Case membership controls—full support in backend schema, partial in current UI (flagged for upgrade).
+  - Storage mode and org boundaries strictly enforced: No data leakage across cases/orgs/storage modes.
 
-2. **Case Workspace**
-   - Modular sections: Overview, Entities, Relations, Notes, Files, Tasks, Audit Log
-   - Drag-and-drop to associate queries, files, findings and snapshots
-   - Collaborative notes area (with edit history, comments, tagging)
-   - Real-time updates for co-editing, notifications to collaborators as needed
+- **Supervisor Approvals & Override:**
+  - Workflow framework present for escalations; UI workflows in progress (approval for record unlock, case sharing, sensitive exports, etc.).
+  - All overrides tracked in audit with justification required.
 
-3. **Investigative Tools Integration**
-   - Visualize “Who-Is-Who” and “Who-Knows-Who” (auto-updates flagged)
-   - Embed live snapshots or static exports; allow annotation
-   - Deep-link each entity/view for full context
+- **Notifications & Alerts:**
+  - Configurable in-app and out-of-band notifications for all case/team operations.
+  - Automated security alerts (e.g., suspicious access, cross-org attempts, bulk activity) with escalation workflow.
 
-4. **Reporting & Export**
-   - Selectable content for report generation (notes, relations, documents, queries)
-   - Rich header/footer/cover builder, PDF/Word/secure ZIP export
-   - All exports logged in audit trail
+- **Future-Proofing:**
+  - “Collaborative workspace” ready for true cross-org/federated use, with enhanced attribute-based and purpose-based controls designed, not yet fully implemented.
 
-### Information Architecture/UI/UX
+## 4. Investigative Tools Integration
 
-- Dashboard with active cases & quick actions
-- Tabbed navigation in each case (Overview, Findings, Notes, Relations, Files, Audit, Collaborators)
-- At-a-glance case summary (entities, networks, timestamps, tasks)
-- Global search bar with in-context actions (“add to case”, “start investigation”)
-- Contextual help, tooltips, and onboarding for new users
+### Functional Summary
 
-## Final Expert Notes
+- **Data/Classified-Restricted Relations:**
+  - Entity resolution, “Who-Is-Who” and “Who-Knows-Who” analysis outputs are only visualized/sharable if user is cleared for **all** underlying data nodes.
+  - Relation graphs never display classified links the user cannot access; org/storage_mode boundaries visually indicated.
 
-Your initial design has solid foundations for a modern, AI-enabled case management system—the major differentiators for best-in-class (Palantir/Babel/IBM i2) revolve around:
-- Extensive automation for repetitive tasks and data entry
-- Proactive suggestions, insights, and anomaly detection by AI
-- Next-level collaboration (beyond simple sharing—real-time, threaded, role-based)
-- Comprehensive audit, compliance, and security trace
+- **Network Analysis Versioning & Auto-Update:**
+  - Default: Saved analytic outputs auto-refresh with new data; user may “freeze” a version for reporting/evidentiary use.
+  - Every update/version is immutable, fully audit logged, with UI indicator for new/changed contents.
+  - Annotations/notes attempt to persist across updates; if not, migration UI and notification provided.
 
-### Key Gaps to Explore
-- Advanced permissions (task, field, and section-level controls)
-- Extensive, tamper-proof audit log and chain-of-custody support
-- Ability to handle multi-jurisdiction/multi-agency cases
-- Predictive analytics suggestions in the Case Builder itself
+- **Tagging & Metadata:**
+  - All outputs tagged with analysis type, source, primary entities, and operational tags.
+  - Tagging and metadata integrate with global search/filter, always within access scope.
 
-Let me know your answers to the above questions and any details you wish to add/clarify. This will let me refine your requirements to world-class standards, ready for LLM prompt engineering and code generation[1][2][3][5][6][4][7][8].
+- **Audit and Chain of Custody:**
+  - Every analytic, view, edit, export, annotation, and sharing action logged at fine-grained detail, including classification/storage_mode of all evidence.
 
-[1] https://www.keywordsearch.com/blog/palantir-gotham-unleashing-a-game-changer
-[2] https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/801146272055049
-[3] https://www.babelstreet.com/solutions/ai-powered-law-enforcement
-[4] https://www.redbooks.ibm.com/redpapers/pdfs/redp5116.pdf
-[5] https://www.ibm.com/docs/en/baw/23.0.x?topic=overview-case-management
-[6] https://www.kaseware.com/case-study/the-collaboration-crisis
-[7] https://www.soundthinking.com/blog/3-essential-law-enforcement-case-management-features/
-[8] https://www.tylertech.com/resources/blog-articles/empower-federal-law-enforcement-with-modern-case-management
-[9] https://palantir.com/docs/gotham/security/overview/
-[10] https://www.palantir.com/platforms/gotham/
-[11] https://palantir.com/docs/foundry/use-cases/use-case-overview/
-[12] https://www.cuspera.com/products/palantir-gotham-x-15601
-[13] https://www.babelstreet.com/resources/topic/law-enforcement
-[14] https://www.keywordsearch.com/blog/palantir-gotham-the-ultimate-data-solution
-[15] https://www.babelstreet.com/about-us
-[16] https://www.ibm.com/docs/en/SSXW43_9.0.2/com.ibm.i2.pam.admin.doc/pam_administration_guide_pdf.pdf
-[17] https://ldapwiki.com/wiki/Wiki.jsp?page=Palantir+Gotham
-[18] https://www.babelstreet.com/blog/mastering-online-investigations-why-managed-attribution-is-essential-for-law-enforcement
-[19] https://i2group.com/solutions/i2-analysts-notebook
-[20] https://cellebrite.com/en/collaboration-between-digital-investigation-units-is-key-to-case-success/
+- **Inter-agency/Federated Mode:**
+  - Foundation baked into entity and visualization layers for federated/collaborative analysis—future expansion.
+
+## 5. Notes, Reporting, and Export
+
+### Functional Summary
+
+- **Rich Notes & Annotation:**
+  - Direct annotation over diagrams and maps; persistent overlay layers, versioned with main graph.
+  - Notes can contain embedded images, media (small video/audio), document attachments.
+  - Tagging: Both granular (section/paragraph) and general, with filter/search UI.
+  - Embedded media carries metadata, supports in-platform playback and caption/transcript viewing (where available).
+
+- **Reporting System:**
+  - **Two-Tier Model:**  
+    - **Official Reports:** Locked, legally-compliant templates (court admissible), enforced mandatory fields, digital signature, export watermarking, and full metadata attachment.
+    - **Custom Reports:** User-defined layouts, narrative+structured, saved organization/team templates, full control for internal or intelligence dissemination.
+  - **Export Options:** PDF, Word, secure HTML/ZIP (all cleared via user’s roles/classifications and audit logged).
+
+- **Audit and Compliance:**
+  - Every note, report, export, and transmission tracked; original data/source always referenced, chain-of-custody preserved.
+  - UI disables export on content above user's scope.
+
+## 6. Security and Audit
+
+### Functional Summary
+
+- **RBAC, Classification, and Storage Mode Grid:**
+  - All actions—search, view, upload, add-to-case, export—enforced at every layer by the intersection of user role, data classification, storage mode, and org boundary.
+  - Full cross-org/federated support is “future ready” in schema and APIs.
+
+- **Case Locking:**
+  - Lock (full/section/record) to freeze data from edits (post-case close, legal freeze, etc.), permissioned to admins/supervisors.
+  - Visual indicators and audit trail for all lock/unlock events.
+
+- **Supervisor Approval/Override:**
+  - Approval framework established for sensitive data and actions (exports, sharing, deletion, etc.), with audit/log for justification, request, approval/reject.
+
+- **Just-in-Time Access/Expiry:**
+  - Temporary privilege escalation controlled by role, storage_mode, or approval; automatic expiry and revoke upon timeout or case status change.
+  - Fully audit logged.
+
+- **Audit Logging & Alerts:**
+  - Immutable, tamper-proof audit tables; each action logs user/org, operation, context (case, record, method), IP, classification, risk score, and security context.
+  - Real-time alerts for risky or anomalous actions (multiple rapid searches, cross-org attempts, bulk-downloads); routed to security dashboards.
+  - Blockchain-ready audit signatures, no log deletion.
+
+## 7. Law Enforcement & Compliance Alignment
+
+- Complete chain of custody support for all evidence handling
+- Only officers assigned on a case or via explicit storage_mode have access to data—fully enforced from DB to UI
+- Meets/exceeds industry requirements for audit, access control, and classification handling
+- System architecture ready for future cross-jurisdictional and multi-agency taskforce operations
+
+# End of Specification
+
+**This requirements document is ready for export as a Markdown file for development, LLM prompting, security reviews, or further business analysis. Let me know if you’d like this broken out into module-by-module `.md` files, or further granular tracked changes annotations.**
