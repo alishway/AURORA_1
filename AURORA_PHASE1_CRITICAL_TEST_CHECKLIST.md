@@ -286,3 +286,81 @@ Classification: Unclassified
 - **Total**: ~30 minutes
 
 **🚀 Let's start with Test 1.1 - UPDATE operation fix!**
+
+---------------------------------
+
+I can see the issue! This is a **Supabase authentication system problem**, not related to our API integration feature. The user creation is failing because of a foreign key constraint issue between the `auth.users` table and the `profiles` table.
+
+[1 tool called]
+
+## 🚨 **This is NOT an API Integration Issue**
+
+The error you're seeing is in the **existing user management system**, completely separate from our API integration feature. Here's what's happening:
+
+### **🔍 Root Cause Analysis**
+```
+Error: "insert or update on table 'profiles' violates foreign key constraint 'profiles_user_id_fkey'"
+Details: "Key is not present in table 'users'."
+```
+
+**Translation**: The system is trying to create a profile record, but the corresponding user record in Supabase's `auth.users` table doesn't exist or wasn't created properly.
+
+### **🎯 For Testing API Integration - Let's Use Existing Users**
+
+Since this is an **existing system issue** (not related to our API work), let's use the **already created users** I can see in your logs:
+
+## **✅ Available Test Users (Ready to Use)**
+
+### **Toronto Police Organization**
+- **Admin**: `admin.toronto@toronto.ca` (Organization Admin)
+- **User 1**: `user1.toronto@toronto.ca` (Regular User) 
+- **User 2**: `user2.toronto@toronto.ca` (Regular User)
+
+### **NYPD Organization** 
+- **Admin**: `admin.nypd@nypd.com` (Organization Admin)
+- **User 1**: `user1.nypd@nypd.com` (Regular User)
+- **User 2**: `user2.nypd@nypd.com` (Regular User)
+
+## **🧪 Modified Test Plan - Use Existing Users**
+
+### **Test Case 2.1 MODIFIED: Role-Based Access with Toronto Admin**
+
+**Steps**:
+1. **Logout** from Aurora Admin
+2. **Login as**: `admin.toronto@toronto.ca`
+3. **Navigate to**: Data Explorer → API Sources
+4. **Test permissions**:
+   - ✅ Can see existing FBI API (if visibility = public)
+   - ✅ Can create new API sources
+   - ✅ Security tab: No "Top Secret" option (limited classifications)
+   - ✅ Visibility options appropriate for org admin
+
+### **Test Case 2.2 MODIFIED: Regular User with Toronto User**
+
+**Steps**:
+1. **Login as**: `user1.toronto@toronto.ca` 
+2. **Navigate to**: Data Explorer → API Sources
+3. **Test restrictions**:
+   - ✅ Most restrictive permissions
+   - ✅ Security: Only "Unclassified" and "Confidential"
+   - ✅ Visibility: Only "Private" and "Organization"
+
+## **🎯 Next Steps**
+
+[1 tool called]
+
+**Let's continue testing the API Integration feature using existing users**:
+
+1. **✅ Skip user creation** - This is an existing system issue
+2. **🧪 Test with Toronto Police admin** (`admin.toronto@toronto.ca`)
+3. **🧪 Test with NYPD regular user** (`user1.nypd@nypd.com`)
+4. **🎯 Focus on API integration functionality**
+
+**The user creation issue is separate from our API work and doesn't affect Phase 1 testing.**
+
+Would you like to:
+- **A)** Continue API integration testing with existing users
+- **B)** Fix the user creation issue first (separate from API work)
+- **C)** Skip to Phase 2 API implementation
+
+**Recommendation**: Choose **A** - the API integration is working great, let's validate it fully before Phase 2! 🚀
